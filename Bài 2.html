@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //bai 2
+    let x = +prompt("Nhập vào số nguyên x");
+    let array = [];
+    let index = +prompt("nhập vào vị trí index");
+    let n = +prompt('nhập vào length của array');
+    let newarr = [];
+
+    function insertNumberToArray() {
+        for (let i = 0; i < n; i++) {
+            array[i] = +prompt("nhập số ở vị trí i" + i + "trong mảng array");
+        }
+        for (let i = 0; i < n; i++) {
+            if (index < 0 || index > n) {
+                return array;
+            } else {
+                for (let j = 0; j < n + 1; j++) {
+                    if (j < index) {
+                        newarr[j] = array[j];
+                    }
+
+                    if (j == index) {
+                        newarr[j] = x;
+                    }
+                    if (j > index) {
+                        newarr[j] = array[j - 1];
+                    }
+                }
+            }
+        }
+        return newarr;
+    }
+
+    alert(insertNumberToArray())
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let x = +prompt("nhập vào số x");
+    let sum = 0;
+
+    function sumOfListPrime(x, sum) {
+        for (let i = 2; i <= x; i++) {
+            let check = true;
+            for (let j = 2; j < i; j++) {
+                if (i % j == 0) {
+                    check = false;
+                    break;
+                }
+
+            }
+            if (check == true) {
+                sum += i;
+            }
+        }
+        return sum;
+    }
+
+    alert(sumOfListPrime(x, sum));
+</script>
+</body>
+</html>
